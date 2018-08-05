@@ -9,63 +9,63 @@ function BuildForm() {
     var questions =
         [
             {
-                question: "What year was it that the Census Bureau first reported that a majority of new mothers  were remaining in the new job market?",
-                choices: ["1968", "1978", "1988", "1970"]
+                question: "Who famously crossed the river Rubicon, with an army which started a civil war in ancient Rome?",
+                choices: ["Octavius", "Julius Caesar", "Marcus Arielius", "Pompey"]
             },
 
             {
-                question: "In the year 1900 in the U.S. what were the most popular first names given to boy and girl babies?",
-                choices: ["William and Elizabeth", "Joseph and Catherine", "John and Mary", "George and Anne"]
+                question: "What two mythological characters are associated with the birth of Rome?",
+                choices: ["Romulus & Remus", "Joseph and Mary", "Minos & Minatar", "Horace & Osirus"]
             },
 
             {
-                question: "Which of the following items was owned by the fewest U.S. homes in 1990?",
-                choices: ["home computer", "compact disk player", "cordless phone", "dishwasher"]
+                question: "If you compared the land owned by the Roman empire to todays map, how many countries would be contained in the Roman Empire?",
+                choices: ["100", "104", "44", "12"]
             },
 
             {
-                question: "Who holds the record for the most victories in a row on the professional golf tour?",
-                choices: ["Jack Nicklaus", "Arnold Palmer", "Byron Nelson", "Ben Hogan"]
+                question: "Who is the Roman God of War?",
+                choices: ["Zeus", "Odin", "Mars", "Minos"]
             },
 
             {
-                question: "What did the D in D-Day stand for?",
-                choices: ["doom", "day", "Dwight", "Dunkirk"]
+                question: "How many years did the Roman-Persian wars last?",
+                choices: ["721", "42", "10", "3"]
             },
 
             {
-                question: "The Brownie Box Camera introduced by Eastman Kodak in 1900 had a retail price of what?",
-                choices: ["$1", "$5", "$10", "$20"]
+                question: "What two months were named after Roman Emperors?",
+                choices: ["January February", "July March", "August & March", "July and August"]
             },
             
             {
-                question: "Which of these characters turned 40 years old in 1990?",
-                choices: ["Charlie Brown", "Bugs Bunny", "Mickey Mouse", "Fred Flintstone"]
+                question: "Which Roman Emperor adopted Christianity?",
+                choices: ["Caesar", "Augustus", "Constantine", "Pompey"]
             },
     
             {
-                question: "The Philadelphia mint started putting a P mint mark on quarters when?",
-                choices: ["1960", "1980", "never", "1956"]
+                question: "Which is not a Roman Emperor?",
+                choices: ["Nero", "Caligula", "CLeopatra", "Tiberius"]
             },
     
             {
-                question: "When Mt. St. Helens erupted on May 18, 1980, how many people were killed?",
-                choices: ["1", "57", "571", "50"]
+                question: "What sea did the Roman Empire surround?",
+                choices: ["The Black Sea", "The Mediterranian Sea", "The Indian Sea", "The Red Sea"]
             }, 
             
             {
-                question: "In J. Edgar Hoover, what did the J stand for?",
-                choices: ["James", "John", "Joseph", "Jack"]
+                question: "What was the largest unit of Soldiers in a Roman army?",
+                choices: ["Centurion", "Legion", "Decant", "Echelon"]
             }, 
     
             {
-                question: "The Daniel Boon museum at the home where he died can best be described how?",
-                choices: ["a log cabin in Kentucky", "a two-story clapboard house in Tennessee", "a four-story Georgian-style home in Missouri", "a three story brick house in Arkansas"],
+                question: "What was poisoning the Roman water supply?",
+                choices: ["mercury", "Cyanide", "deadly nightshade", "lead"],
             },
     
             {
-                question: "Who is third behind Hank Aaron and Babe Ruth in major league career home runs?",
-                choices: ["Reggie Jackson","Harmon Killebrew", "Willie Mays", "Frank Robinson"]
+                question: "What did gladiators fight in?",
+                choices: ["Cage matches","Colliseum", "Areana", "Octagon"]
             }
         ];
         
@@ -102,7 +102,7 @@ function BuildForm() {
 
 function start() {
 
-    //Use setInterval to start the count here and set the clock to running.
+    //Use setInterval to start clock
     $("#btnStart").remove();
     BuildForm();
     intervalId = setInterval(count, 1000);
@@ -110,7 +110,7 @@ function start() {
 
 function stop() {
 
-    // DONE: Use clearInterval to stop the count here and set the clock to not be running.
+    // stop the clock
     clearInterval(intervalId);
 }
 
@@ -130,7 +130,7 @@ function submitAnswers() {
     var incorrect = 0;
     var unanswered = 0;
 
-    //Get user input
+    // User Input
     var q0 = document.forms["quizForm"]["q0"].value;
     var q1 = document.forms["quizForm"]["q1"].value;
     var q2 = document.forms["quizForm"]["q2"].value;
@@ -151,8 +151,8 @@ function submitAnswers() {
         }
     }
 
-    // Set Correct Answers
-    var answers = ["c", "c", "b", "c", "b","a","a","b","b","b","c","c"];
+    //  Correct Answers
+    var answers = ["b", "a", "c", "c", "a","d","c","c","b","b","d","b"];
 
     //check answers
     for (var i = 0; i < total; i++) {
@@ -167,7 +167,7 @@ function submitAnswers() {
     $("form").empty();
     stop();
     $("#displayTime").empty();
-    var done = $('<h2>All Done!</h2>');
+    var done = $('<h2>Finished!</h2>');
 
     var correctTotal = $('<h3>Correct Answers: ' + correct + ' </h3>');
     var incorrectTotal = $('<h3>Incorrect Answers: ' + incorrect + ' </h3>');
